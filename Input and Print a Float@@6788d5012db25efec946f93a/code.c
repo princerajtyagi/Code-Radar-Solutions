@@ -1,11 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    float number; 
-    printf("Enter a number:");
-    scanf("%d", &number);
+    float num;
+    scanf("%d", &num);
 
-    printf("You entered: %2d\n", number);
+    printf("You entered: %.2d\n", num);
 
     return 0;
 }
