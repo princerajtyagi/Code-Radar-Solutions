@@ -3,9 +3,9 @@
 int main() {
     float number; 
     printf("Enter a number");
-    scanf("%f", &number);
+    scanf("%d", &number);
 
-    printf("You entered: %.2f\n", number);
+    printf("You entered: %2d\n", number);
 
     return 0;
 }
