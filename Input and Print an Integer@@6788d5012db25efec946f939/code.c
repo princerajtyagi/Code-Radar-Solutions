@@ -2,6 +2,6 @@
 int main() {
     int num;
     scanf("n", num);
-    printf(Youe entered: "%s", num);
+    printf(Youe entered: "%n", num);
     return 0;
 }
