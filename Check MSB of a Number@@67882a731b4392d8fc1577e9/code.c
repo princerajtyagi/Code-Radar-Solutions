@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 int main() {
     int num;
     scanf("%d", &num);
@@ -8,6 +7,5 @@ int main() {
     } else {
         printf("Not Set");
     }
-
     return 0;
 }
