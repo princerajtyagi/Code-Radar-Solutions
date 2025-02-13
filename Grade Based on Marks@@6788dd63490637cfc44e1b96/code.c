@@ -4,15 +4,15 @@ int main() {
     int marks;
     scanf("%d", &marks);
     if (marks >= 90)
-        printf("Grade: A\n");
+        printf("A");
     else if (marks >= 80)
-        printf("Grade: B\n");
+        printf("B");
     else if (marks >= 70)
-        printf("Grade: C\n");
+        printf("C");
     else if (marks >= 60)
-        printf("Grade: D\n");
+        printf("D");
     else
-        printf("Grade: F\n");
+        printf("F");
 
     return 0;
 }
