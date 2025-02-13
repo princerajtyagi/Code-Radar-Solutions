@@ -4,14 +4,14 @@ int main() {
     int a;
     scanf("%d", &a);
     if (a >= 90)
-        printf("A");
+        return "A";
     else if (a >= 80)
-        printf("B");
+        return "B";
     else if (a >= 70)
-        printf("C");
+        return "C";
     else if (a >= 60)
-        printf("D");
+        return "D";
     else
-        printf("F");
+        return "F";
     return 0;
 }
