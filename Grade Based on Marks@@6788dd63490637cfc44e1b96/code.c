@@ -1,17 +1,18 @@
-// Your code here...#include <stdio.h>
+#include <stdio.h>
 
 int main() {
-    int a;
-    scanf("%d", &a);
-    if (a >= 90)
-        return "A";
-    else if (a >= 80)
-        return "B";
-    else if (a >= 70)
-        return "C";
-    else if (a >= 60)
-        return "D";
+    int marks;
+    scanf("%d", &marks);
+    if (marks >= 90)
+        printf("Grade: A\n");
+    else if (marks >= 80)
+        printf("Grade: B\n");
+    else if (marks >= 70)
+        printf("Grade: C\n");
+    else if (marks >= 60)
+        printf("Grade: D\n");
     else
-        return "F";
+        printf("Grade: F\n");
+
     return 0;
 }
