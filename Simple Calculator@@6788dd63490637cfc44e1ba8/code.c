@@ -9,8 +9,14 @@ int main() {
         printf("%d", a-b);
     else if (op=='*')
         printf("%d", a*b);
-    else if (op=='/')
-        printf("%d", a/b);
+    else if (op=='/'){
+        if (b == 0)
+            printf("Error: Division by zero is not allowed.\n");
+        else
+            printf("%d\n", a / b);
+    } 
+    else
+        printf("Error: Invalid operator.\n");
     return 0;
 }
 
