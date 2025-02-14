@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 int main() {
     int a;
     scanf("%d", &a);
@@ -30,4 +30,6 @@ int main() {
         printf("Invalid");
     return 0;
 }
+
+
 
