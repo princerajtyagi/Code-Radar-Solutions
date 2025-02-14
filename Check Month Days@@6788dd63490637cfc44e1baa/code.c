@@ -25,7 +25,7 @@ int main() {
     else if (a==11)
         printf("30");
     else if (a==12);
-        printf("31")
+        printf("31");
     else
         printf("Invalid");
     
