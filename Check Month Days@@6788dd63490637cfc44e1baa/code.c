@@ -28,7 +28,6 @@ int main() {
         printf("31");
     else
         printf("Invalid");
-    
     return 0;
 }
 
