@@ -4,15 +4,15 @@ int main() {
     double num1, num2;
     char op;
 
-    scanf("%lf %lf %c", &num1, &num2, &op);
+    scanf("%d %d %c", &num1, &num2, &op);
 
     // Performing the operation
     if (op == '+')
-        printf("Result: %.2lf\n", num1 + num2);
+        printf("%d", num1 + num2);
     else if (op == '-')
-        printf("Result: %.2lf\n", num1 - num2);
+        printf("%d", num1 - num2);
     else if (op == '*')
-        printf("Result: %.2lf\n", num1 * num2);
+        printf("%d", num1 * num2);
     else if (op == '/') {
         if (num2 != 0)
             printf("Result: %.2lf\n", num1 / num2);
