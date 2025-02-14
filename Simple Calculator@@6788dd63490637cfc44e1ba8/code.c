@@ -13,10 +13,10 @@ int main() {
         if (b == 0)
             printf("Error: Division by zero is not allowed.\n");
         else
-            printf("%d\n", a / b);
+            printf("%d", a / b);
     } 
     else
-        printf("Error: Invalid operator.\n");
+        printf("Error");
     return 0;
 }
 
