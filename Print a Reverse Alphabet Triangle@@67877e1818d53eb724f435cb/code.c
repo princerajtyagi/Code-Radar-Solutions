@@ -3,7 +3,7 @@ int main() {
     int rows;
     scanf("%d", &rows);
     for (int i = rows; i >= 1; i--) {
-        for (char ch = 'a' + i - 1; ch >= 'a'; ch--)
+        for (char ch = 'A' + i - 1; ch >= 'A'; ch--)
             printf("%c ", ch);
         printf("\n");
     }
