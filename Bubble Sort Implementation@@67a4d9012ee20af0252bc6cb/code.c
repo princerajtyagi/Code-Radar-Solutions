@@ -34,5 +34,5 @@ int main() {
     bubbleSort(arr, n); // Sort the array
     printArray(arr, n); // Print sorted array
 
-    return 0; // Fixed the colon (:) error
+    return 0; // ✅ Fixed: Replaced `:` with `;`
 }
