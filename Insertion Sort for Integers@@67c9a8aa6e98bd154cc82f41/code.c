@@ -24,13 +24,3 @@ void printArray(int arr[], int n) {
     }
     printf("\n");
 }
-
-int main() {
-    int arr[] = {9, 2, 5, 1, 7};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    insertionSort(arr, n);     // Sort the array
-    printArray(arr, n);        // Print the sorted array
-
-    return 0;
-}
