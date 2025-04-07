@@ -2,40 +2,24 @@
 
 int main() {
     char message[100];
-    int shift;
+    int shift, i;
 
-    printf("Enter a message to encrypt: ");
+    printf("Enter message: ");
     fgets(message, sizeof(message), stdin);
 
-    printf("Enter shift amount: ");
+    printf("Enter shift: ");
     scanf("%d", &shift);
 
-    // Call the encryption function
-    caesarCipherEncrypt(message, shift);
-
-    printf("Encrypted message: %s", message);
-
-    return 0;
-}
-
-void caesarCipherEncrypt(char *message, int shift) {
-    int i = 0;
-    char ch;
-
+    i = 0;
     while (message[i] != '\0') {
-        ch = message[i];
-
-        // Encrypt uppercase letters
-        if (ch >= 'A' && ch <= 'Z') {
-            ch = ((ch - 'A' + shift) % 26) + 'A';
-            message[i] = ch;
+        if (message[i] >= 'A' && message[i] <= 'Z') {
+            message[i] = (message[i] - 'A' + shift) % 26 + 'A';
+        } else if (message[i] >= 'a' && message[i] <= 'z') {
+            message[i] = (message[i] - 'a' + shift) % 26 + 'a';
         }
-        // Encrypt lowercase letters
-        else if (ch >= 'a' && ch <= 'z') {
-            ch = ((ch - 'a' + shift) % 26) + 'a';
-            message[i] = ch;
-        }
-        // Leave other characters unchanged
         i++;
     }
+
+    printf("Encrypted message: %s", message);
+    return 0;
 }
