@@ -2,6 +2,9 @@
 #include <string.h>
 #include <ctype.h>
 
+// Function prototype
+void caesarCipher(char message[], int shift, char encrypted[]);
+
 int main() {
     char message[100];
     int shift;
@@ -18,7 +21,7 @@ int main() {
     if (shift < 0)
         shift += 26;
 
-    // call the caesarCipher function (to be implemented by the student)
+    // Call the caesarCipher function
     caesarCipher(message, shift, encrypted);
 
     // Output the encrypted message
@@ -27,7 +30,7 @@ int main() {
     return 0;
 }
 
-// Implement the caesarCipher function
+// Define the caesarCipher function
 void caesarCipher(char message[], int shift, char encrypted[]) {
     int i = 0;
     while (message[i] != '\0') {
