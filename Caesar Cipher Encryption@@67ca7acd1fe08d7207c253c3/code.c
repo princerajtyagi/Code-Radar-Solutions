@@ -1,19 +1,19 @@
 #include <stdio.h>
 #include <ctype.h>
 
-// Function declaration
+// Caesar cipher function declaration
 void caesarCipher(char message[], int shift, char encrypted[]);
 
-// Main function
+// Only one main function!
 int main() {
     char message[100];
     int shift;
     char encrypted[100];
 
-    printf("Enter the message: ");
-    fgets(message, sizeof(message), stdin); // safer input
+    // Read the message
+    scanf(" %[^\n]", message);  // Note: space before %[^\n] helps skip leftover newline
 
-    printf("Enter the shift: ");
+    // Read the shift value
     scanf("%d", &shift);
 
     // Normalize shift
@@ -21,14 +21,16 @@ int main() {
     if (shift < 0)
         shift += 26;
 
+    // Encrypt the message
     caesarCipher(message, shift, encrypted);
 
-    printf("Encrypted message: %s", encrypted);
+    // Print the encrypted message
+    printf("%s\n", encrypted);
 
     return 0;
 }
 
-// Caesar cipher implementation
+// Function definition
 void caesarCipher(char message[], int shift, char encrypted[]) {
     int i = 0;
     while (message[i] != '\0') {
@@ -39,10 +41,10 @@ void caesarCipher(char message[], int shift, char encrypted[]) {
         } else if (ch >= 'a' && ch <= 'z') {
             encrypted[i] = (ch - 'a' + shift) % 26 + 'a';
         } else {
-            encrypted[i] = ch; // non-alphabet characters unchanged
+            encrypted[i] = ch;
         }
 
         i++;
     }
-    encrypted[i] = '\0'; // null-terminate the string
+    encrypted[i] = '\0'; // end the string properly
 }
