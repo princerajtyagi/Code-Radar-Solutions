@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include <ctype.h>
 
 // Function declaration
@@ -7,29 +8,29 @@ void caesarCipher(char message[], int shift, char encrypted[]);
 int main() {
     char message[100];
     int shift;
-    char encrypted[100];
+    char encrypted[100]; // to store the encrypted message
 
-    // Input message
-    scanf(" %[^\n]", message);
+    // Read the input message
+    scanf(" %[^\n]", message); // Read entire line including spaces
 
-    // Input shift value
+    // Read the shift value
     scanf("%d", &shift);
 
-    // Normalize shift
+    // Normalize the shift to the range [0, 25]
     shift = shift % 26;
     if (shift < 0)
         shift += 26;
 
-    // Encrypt
+    // Call the caesarCipher function
     caesarCipher(message, shift, encrypted);
 
-    // Output encrypted message
+    // Output the encrypted message
     printf("%s\n", encrypted);
 
     return 0;
 }
 
-// Function definition
+// Define the caesarCipher function
 void caesarCipher(char message[], int shift, char encrypted[]) {
     int i = 0;
     while (message[i] != '\0') {
@@ -37,9 +38,9 @@ void caesarCipher(char message[], int shift, char encrypted[]) {
             char base = isupper(message[i]) ? 'A' : 'a';
             encrypted[i] = (message[i] - base + shift) % 26 + base;
         } else {
-            encrypted[i] = message[i];
+            encrypted[i] = message[i]; // leave non-alphabet characters unchanged
         }
         i++;
     }
-    encrypted[i] = '\0';
+    encrypted[i] = '\0'; // null-terminate the encrypted string
 }
