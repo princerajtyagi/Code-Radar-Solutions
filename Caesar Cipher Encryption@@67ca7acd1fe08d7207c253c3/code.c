@@ -1,5 +1,23 @@
 #include <stdio.h>
 
+int main() {
+    char message[100];
+    int shift;
+
+    printf("Enter a message to encrypt: ");
+    fgets(message, sizeof(message), stdin);
+
+    printf("Enter shift amount: ");
+    scanf("%d", &shift);
+
+    // Call the encryption function
+    caesarCipherEncrypt(message, shift);
+
+    printf("Encrypted message: %s", message);
+
+    return 0;
+}
+
 void caesarCipherEncrypt(char *message, int shift) {
     int i = 0;
     char ch;
@@ -20,21 +38,4 @@ void caesarCipherEncrypt(char *message, int shift) {
         // Leave other characters unchanged
         i++;
     }
-}
-
-int main() {
-    char message[100];
-    int shift;
-
-    printf("Enter a message to encrypt: ");
-    fgets(message, sizeof(message), stdin);
-
-    printf("Enter shift amount: ");
-    scanf("%d", &shift);
-
-    caesarCipherEncrypt(message, shift);
-
-    printf("Encrypted message: %s", message);
-
-    return 0;
 }
