@@ -1,49 +1,48 @@
 #include <stdio.h>
-#include <string.h>
 #include <ctype.h>
 
-// Function prototype
+// Function declaration
 void caesarCipher(char message[], int shift, char encrypted[]);
 
+// Main function
 int main() {
     char message[100];
     int shift;
-    char encrypted[100]; // store the encrypted message
+    char encrypted[100];
 
-    // Read the input message
-    scanf("%[^\n]s", message); // Read entire line including spaces
+    printf("Enter the message: ");
+    fgets(message, sizeof(message), stdin); // safer input
 
-    // Read the shift value
+    printf("Enter the shift: ");
     scanf("%d", &shift);
 
-    // Normalize the shift to the range [0, 25]
+    // Normalize shift
     shift = shift % 26;
     if (shift < 0)
         shift += 26;
 
-    // Call the caesarCipher function
     caesarCipher(message, shift, encrypted);
 
-    // Output the encrypted message
-    printf("%s\n", encrypted);
+    printf("Encrypted message: %s", encrypted);
 
     return 0;
 }
 
-// Define the caesarCipher function
+// Caesar cipher implementation
 void caesarCipher(char message[], int shift, char encrypted[]) {
     int i = 0;
     while (message[i] != '\0') {
         char ch = message[i];
 
-        if (isalpha(ch)) {
-            char base = isupper(ch) ? 'A' : 'a';
-            encrypted[i] = (ch - base + shift) % 26 + base;
+        if (ch >= 'A' && ch <= 'Z') {
+            encrypted[i] = (ch - 'A' + shift) % 26 + 'A';
+        } else if (ch >= 'a' && ch <= 'z') {
+            encrypted[i] = (ch - 'a' + shift) % 26 + 'a';
         } else {
-            encrypted[i] = ch; // leave non-alphabetic characters unchanged
+            encrypted[i] = ch; // non-alphabet characters unchanged
         }
 
         i++;
     }
-    encrypted[i] = '\0'; // null-terminate the encrypted string
+    encrypted[i] = '\0'; // null-terminate the string
 }
