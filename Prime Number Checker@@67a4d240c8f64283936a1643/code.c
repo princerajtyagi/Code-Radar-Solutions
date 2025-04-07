@@ -1,5 +1,3 @@
-#include <stdio.h>
-
 int isPrime(int num) {
     if (num <= 1)
         return 0;
@@ -8,16 +6,4 @@ int isPrime(int num) {
             return 0;
     }
     return 1;
-}
-
-int main() {
-    int number;
-    scanf("%d", &number);
-
-    if (isPrime(number))
-        printf("%d", number);
-    else
-        printf("%d", number);
-
-    return 0;
 }
