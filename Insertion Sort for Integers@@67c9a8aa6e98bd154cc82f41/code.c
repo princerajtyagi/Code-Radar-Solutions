@@ -1,6 +1,3 @@
-#include <stdio.h>
-
-// Sort function
 void insertionSort(int arr[], int n) {
     int i, key, j;
     for (i = 1; i < n; i++) {
@@ -14,22 +11,4 @@ void insertionSort(int arr[], int n) {
 
         arr[j + 1] = key;
     }
-}
-
-// Print function
-void printArray(int arr[], int n) {
-    for (int i = 0; i < n; i++) {
-        printf("%d ", arr[i]);
-    }
-    printf("\n");
-}
-
-int main() {
-    int arr[] = {9, 2, 5, 1, 7};
-    int n = sizeof(arr) / sizeof(arr[0]);
-
-    insertionSort(arr, n);
-    printArray(arr, n);
-
-    return 0;
 }
