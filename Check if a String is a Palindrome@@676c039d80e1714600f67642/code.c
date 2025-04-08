@@ -1,21 +1,18 @@
-#include <stdio.h>
-#include <ctype.h>
-
-int main() {
-    char str[1000];
-    int letters[26] = {0}, count = 0;
-    scanf("%[^\n]", str); 
-
-    for (int i = 0; str[i] != '\0'; i++) {
-        if (isalpha(str[i])) {
-            int index = tolower(str[i]) - 'a'; 
-            if (!letters[index]) { 
-                letters[index] = 1;
-                count++;
-            }
-        }
+#include<stdio.h>
+#include<string.h>
+#include<ctype.h>
+int main(){
+    char str[100];
+    char rev[100];
+    scanf("%[^\n]",str);
+    int n=strlen(str);
+    for(int i=n-1;i>=0;i--){
+       rev[i]=str[n-i-1];
     }
-    printf(count == 26 ? "Yes\n" : "No\n");
-
-    return 0;
+    rev[n]='\0';
+    if(strcmp(rev,str)==0){
+        printf("Yes");
+    }else{
+        printf("No");
+    }
 }
